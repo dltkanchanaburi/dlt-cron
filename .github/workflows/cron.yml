@@ -2,11 +2,11 @@ name: Call DLT
 on:
   schedule:
     - cron: '*/5 * * * *'
-  workflow_dispatch:  # เพิ่มบรรทัดนี้เพื่อให้กดรันเองได้
+  workflow_dispatch:
 
 jobs:
   call:
     runs-on: ubuntu-latest
     steps:
       - name: Call URL
-        run: curl https://kanchanaburi.dlt.go.th/TLnotication/check_and_send_mail
+        run: curl -k https://kanchanaburi.dlt.go.th/TLnotication/check_and_send_mail
